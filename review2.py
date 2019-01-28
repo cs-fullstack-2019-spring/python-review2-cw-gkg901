@@ -9,12 +9,26 @@ def main():
 
 
 def ex():
+
+
+
+
+
+
     # DELETE TASK FUNCTION
     def deleteTask(x):
 
         taskList.remove(x)
 
     taskList = ["Finish this project"]
+    # IMPORTS SAVE
+    with open("TASK.txt","r")as save:
+        for item in save:
+            taskList.append(item)
+
+
+
+
     # PROGRAM START!!!!!!!!!!!!!!!!!!!
     print("Congratulations! You're running Gerren's Task List program.")
 
@@ -45,10 +59,20 @@ def ex():
 
 
         elif userInput == "0":
+            # SAVES LIST TO TASK.txt
+            for each in taskList:
+                f = open("TASK.txt","a")
+                f.write(each+"\n")
+                f.close()
             break
         else:
             print("INVALID ENTRY")
             continue
+
+
+
+
+
 
 
 if __name__ == '__main__':
